@@ -1,4 +1,4 @@
-(function _PrinterToString_s_() {
+(function _PrinterToSever_s_() {
 
 'use strict';
 
@@ -18,16 +18,20 @@ if( typeof module !== 'undefined' )
   }
 
   var _ = wTools;
+  _.io = require( 'socket.io-client' );
 
   _.include( 'wLogger' );
+  _.include( 'wConsequence' );
 
 }
+
+var symbolForLevel = Symbol.for( 'level' );
 
 //
 
 var _ = wTools;
 var Parent = wPrinterTop;
-var Self = function wPrinterToString( o )
+var Self = function wLoggerToServer( o )
 {
   if( !( this instanceof Self ) )
   if( o instanceof Self )
@@ -37,7 +41,7 @@ var Self = function wPrinterToString( o )
   return Self.prototype.init.apply( this,arguments );
 }
 
-Self.nameShort = 'PrinterToString';
+Self.nameShort = 'LoggerToSever';
 
 //
 
@@ -47,6 +51,41 @@ function init( o )
 
   Parent.prototype.init.call( self,o );
 
+  if( !self.url  )
+  self.url = 'http://127.0.0.1:3000';
+}
+
+//
+
+function connect()
+{
+  var self = this;
+
+  var con = new wConsequence;
+
+  if( self.socket && self.socket.connected )
+  self.socket.disconnect();
+
+  self.socket = _.io( self.url );
+  self.socket.on( 'connect', function()
+  {
+      self.socket.emit('join', '' );
+      con.give();
+  });
+
+  return con;
+}
+
+//
+
+function disconnect()
+{
+  var self = this;
+
+  if( self.socket && self.socket.connected )
+  self.socket.disconnect();
+
+  return !self.socket.connected;
 }
 
 //
@@ -55,13 +94,20 @@ function write()
 {
   var self = this;
 
+  debugger;
   var o = wPrinterBase.prototype.write.apply( self,arguments );
 
+  if( !o )
+  return;
+
+  _.assert( o );
   _.assert( _.arrayIs( o.output ) );
   _.assert( o.output.length === 1 );
-  _.assert( _.strIs( o.pure ) );
 
-  self.outputData += o.pure;
+  var message = o.output[ 0 ];
+
+  if( self.socket.connected )
+  self.socket.emit( self.typeOfMessage, message );
 
   return o;
 }
@@ -72,11 +118,12 @@ function write()
 
 var Composes =
 {
+  url : null,
+  typeOfMessage : 'log'
 }
 
 var Aggregates =
 {
-  outputData : '',
 }
 
 var Associates =
@@ -85,6 +132,7 @@ var Associates =
 
 var Restricts =
 {
+  socket : null,
 }
 
 // --
@@ -95,6 +143,9 @@ var Proto =
 {
 
   init : init,
+
+  connect : connect,
+  disconnect : disconnect,
 
   write : write,
 
@@ -115,6 +166,20 @@ _.protoMake
   cls : Self,
   parent : Parent,
   extend : Proto,
+});
+
+// Self.prototype._initChainingMixin();
+
+//
+
+_.accessor
+({
+  object : Self.prototype,
+  names :
+  {
+    level : 'level',
+  },
+  combining : 'rewrite'
 });
 
 // --

@@ -15,14 +15,14 @@
     }
   ],
   "license": "MIT",
-  "main": "staging/abase/printer/printer/Logger.s",
+  "main": "staging/abase/printer/printer/ToServer.s",
   "files": [
     "staging/abase",
     "production"
   ],
   "directories": {
     "doc": "doc",
-    "main": "staging/abase/printer/printer/Logger.s"
+    "main": "staging/abase/printer/printer/ToServer.s"
   },
   "scripts": {
     "test": "wtest staging",
@@ -38,8 +38,12 @@
   "dependencies": {
     "wTools": "",
     "wCopyable": "",
+    "wConsequence": "",
     "wColor": "",
-    "wFiles": ""
+    "wFiles": "",
+    "socket.io": "",
+    "socket-io-server": "",
+    "express": ""
   },
   "devDependencies": {
     "wTesting": ""

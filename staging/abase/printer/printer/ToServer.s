@@ -113,7 +113,7 @@ function write()
 
   if( self.socket.connected )
   self.socket.emit( self.typeOfMessage, message );
-
+  
   return o;
 }
 
@@ -177,16 +177,6 @@ _.protoMake
 // Self.prototype._initChainingMixin();
 
 //
-
-_.accessor
-({
-  object : Self.prototype,
-  names :
-  {
-    level : 'level',
-  },
-  combining : 'rewrite'
-});
 
 // --
 // export

@@ -57,9 +57,14 @@ function init( o )
 
 //
 
-function connect()
+function connect( url )
 {
   var self = this;
+
+  if( url )
+  self.url = url;
+
+  _.assert( _.strIs( self.url ) );
 
   var con = new wConsequence;
 
@@ -73,7 +78,7 @@ function connect()
       con.give();
   });
 
-  return con;
+  return con.eitherThenSplit( _.timeOutError( self.connectionTimeout ) );
 }
 
 //
@@ -119,7 +124,8 @@ function write()
 var Composes =
 {
   url : null,
-  typeOfMessage : 'log'
+  typeOfMessage : 'log',
+  connectionTimeout : 5000
 }
 
 var Aggregates =

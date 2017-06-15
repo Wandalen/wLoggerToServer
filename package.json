@@ -1,8 +1,8 @@
 {
-  "name": "wLogger",
-  "version": "0.4.10",
+  "name": "wLoggerToServer",
+  "version": "0.3.0",
   "engine": "node >= 6.0.0",
-  "description": "Module in JavaScript providing convenient, layered, cross-platform means for multilevel, colorful logging",
+  "description": "Module in JavaScript providing convenient, layered, logging to the server.",
   "author": "Kostiantyn Wandalen <wtory.net@domainsbyproxy.com>",
   "contributors": [
     {
@@ -30,10 +30,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Wandalen/wLogger.git"
+    "url": "https://github.com/Wandalen/wLoggerToServer.git"
   },
   "bugs": {
-    "url": "https://github.com/Wandalen/wLogger/issues"
+    "url": "https://github.com/Wandalen/wLoggerToServer/issues"
   },
   "dependencies": {
     "wTools": "",

@@ -5,7 +5,7 @@ Logger connects to the server and transfers all incoming/outcoming messages to i
 
 ## Installation
 ```terminal
-npm install wLoggerToServer
+npm install wloggertoserver
 ```
 ## Usage
 ### Options

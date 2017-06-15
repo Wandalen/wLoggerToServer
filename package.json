@@ -1,5 +1,5 @@
 {
-  "name": "wLoggerToServer",
+  "name": "wloggertoserver",
   "version": "0.3.0",
   "engine": "node >= 6.0.0",
   "description": "Module in JavaScript providing convenient, layered, logging to the server.",

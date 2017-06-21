@@ -72,11 +72,8 @@ function connect( url )
   self.socket.disconnect();
 
   self.socket = _.io( self.url );
-  self.socket.on( 'connect', function()
-  {
-      self.socket.emit('join', '' );
-      con.give();
-  });
+  self.socket.on( 'connect', () => self.socket.emit('join', '' ) );
+  self.socket.on( 'ready', () => con.give() );
 
   return con.eitherThenSplit( _.timeOutError( self.connectionTimeout ) );
 }
@@ -113,7 +110,7 @@ function write()
 
   if( self.socket.connected )
   self.socket.emit( self.typeOfMessage, message );
-  
+
   return o;
 }
 

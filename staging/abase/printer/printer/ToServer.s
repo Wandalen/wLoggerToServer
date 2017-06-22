@@ -53,6 +53,8 @@ function init( o )
 
   if( !self.url  )
   self.url = 'http://127.0.0.1:3000';
+
+  self.counter = { out : 0, in : 0 };
 }
 
 //
@@ -72,8 +74,10 @@ function connect( url )
   self.socket.disconnect();
 
   self.socket = _.io( self.url );
-  self.socket.on( 'connect', () => self.socket.emit('join', '' ) );
-  self.socket.on( 'ready', () => con.give() );
+  self.socket.on( 'connect', function ()
+  {
+    self.socket.emit( 'join', '', () => con.give() );
+  });
 
   return con.eitherThenSplit( _.timeOutError( self.connectionTimeout ) );
 }
@@ -84,10 +88,11 @@ function disconnect()
 {
   var self = this;
 
-  if( self.socket && self.socket.connected )
-  self.socket.disconnect();
+  var con = new wConsequence().give();
 
-  return !self.socket.connected;
+  con.timeOutThen( self.delayBeforeDisconnect, () => self.socket.disconnect() )
+
+  return con;
 }
 
 //
@@ -109,7 +114,10 @@ function write()
   var message = o.output[ 0 ];
 
   if( self.socket.connected )
-  self.socket.emit( self.typeOfMessage, message );
+  {
+    self.counter.out++;
+    self.socket.emit( self.typeOfMessage, message, () => self.counter.in++ );
+  }
 
   return o;
 }
@@ -122,7 +130,8 @@ var Composes =
 {
   url : null,
   typeOfMessage : 'log',
-  connectionTimeout : 5000
+  connectionTimeout : 5000,
+  delayBeforeDisconnect : 1500
 }
 
 var Aggregates =
@@ -136,6 +145,7 @@ var Associates =
 var Restricts =
 {
   socket : null,
+  counter : null
 }
 
 // --

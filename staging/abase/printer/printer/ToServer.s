@@ -181,8 +181,6 @@ _.protoMake
   extend : Proto,
 });
 
-// Self.prototype._initChainingMixin();
-
 //
 
 // --
@@ -190,10 +188,7 @@ _.protoMake
 // --
 
 if( typeof module !== 'undefined' && module !== null )
-{
-  module[ 'exports' ] = Self;
-}
-
+module[ 'exports' ] = Self;
 _global_[ Self.name ] = wTools[ Self.nameShort ] = Self;
 
 })();

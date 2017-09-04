@@ -174,26 +174,19 @@ var Proto =
 
 //
 
-_.protoMake
+_.prototypeMake
 ({
   cls : Self,
   parent : Parent,
   extend : Proto,
 });
 
-// Self.prototype._initChainingMixin();
-
-//
-
 // --
 // export
 // --
 
 if( typeof module !== 'undefined' && module !== null )
-{
-  module[ 'exports' ] = Self;
-}
-
+module[ 'exports' ] = Self;
 _global_[ Self.name ] = wTools[ Self.nameShort ] = Self;
 
 })();

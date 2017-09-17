@@ -1,6 +1,6 @@
 
 if( typeof module !== 'undefined' )
-require( '../staging/abase/printer/printer/ToServer.s' );
+require( 'wloggertoserver' );
 
 var _ = wTools;
 

@@ -2,7 +2,7 @@
   "name": "wloggertoserver",
   "version": "0.3.4",
   "engine": "node >= 6.0.0",
-  "description": "Module in JavaScript providing convenient, layered, logging to the server.",
+  "description": "The module in JavaScript provides convenient, layered, logging to the server.",
   "author": "Kostiantyn Wandalen <wtory.net@domainsbyproxy.com>",
   "contributors": [
     {
@@ -15,15 +15,11 @@
     }
   ],
   "license": "MIT",
-  "main": "staging/abase/printer/printer/ToServer.s",
+  "main": "staging/dwtools/abase/oclass/printer/top/ToServer.s",
   "files": [
-    "staging/abase",
+    "staging/dwtools/abase/oclass",
     "production"
   ],
-  "directories": {
-    "doc": "doc",
-    "main": "staging/abase/printer/printer/ToServer.s"
-  },
   "scripts": {
     "test": "wtest staging",
     "make_doc": "./doc.sh"
@@ -46,7 +42,8 @@
     "express": ""
   },
   "devDependencies": {
-    "wTesting": ""
+    "wTesting": "",
+    "wloggertoserver": "."
   },
   "keywords": [
     "wTools",

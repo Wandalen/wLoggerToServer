@@ -18,7 +18,7 @@ io.on( 'connection', function( client )
 
     client.on ('log', function ( msg )
     {
-      console.log( msg );
+      logger.log( _.strColor.bg( _.strColor.fg( "Message from logger  : " + msg, 'black' ), 'yellow' ) );
     });
   });
 
@@ -34,7 +34,7 @@ server.listen( 3000, function ()
   l.connect()
   .doThen( function ()
   {
-    l.log( 'Message from wLoggerToServer' );
+    l.log( 'wLoggerToServer' );
     l.disconnect();
   })
 });

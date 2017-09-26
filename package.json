@@ -15,9 +15,9 @@
     }
   ],
   "license": "MIT",
-  "main": "staging/dwtools/abase/oclass/printer/top/ToServer.s",
+  "main": "staging/dwtools/abase/aclass/printer/top/ToServer.s",
   "files": [
-    "staging/dwtools/abase/oclass/printer",
+    "staging/dwtools/abase/aclass/printer",
     "production"
   ],
   "scripts": {

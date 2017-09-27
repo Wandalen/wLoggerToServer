@@ -101,7 +101,6 @@ function write()
 {
   var self = this;
 
-  debugger;
   var o = wPrinterBase.prototype.write.apply( self,arguments );
 
   if( !o )

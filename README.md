@@ -1,4 +1,3 @@
-
 # wLoggerToServer [![Build Status](https://travis-ci.org/Wandalen/wLoggerToServer.svg?branch=master)](https://travis-ci.org/Wandalen/wLoggerToServer)
 
 The module in JavaScript provides way to send messages to the dedicated server.

@@ -18,7 +18,16 @@ if( typeof module !== 'undefined' )
   }
 
   var _ = wTools;
-  _.io = require( 'socket.io-client' );
+
+  if( module.isBrowser )
+  {
+    require( 'socket.io-client/dist/socket.io.js' );
+    _.io = io;
+  }
+  else
+  {
+    _.io = require( 'socket.io-client' );
+  }
 
   _.include( 'wLogger' );
   _.include( 'wConsequence' );

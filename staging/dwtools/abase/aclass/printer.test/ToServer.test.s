@@ -79,7 +79,7 @@ var Proto =
 //
 
 _.mapExtend( Self,Proto );
-Self = wTestSuite( Self );
+Self = wTestSuit( Self );
 
 if( typeof module !== 'undefined' && !module.parent )
 _.Tester.test( Self.name );

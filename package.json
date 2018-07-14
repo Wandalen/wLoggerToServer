@@ -3,11 +3,11 @@
   "version": "0.3.9",
   "engine": "node >= 6.0.0",
   "description": "The module in JavaScript provides convenient, layered, logging to the server.",
-  "author": "Kostiantyn Wandalen <wtory.net@domainsbyproxy.com>",
+  "author": "Kostiantyn Wandalen <wanalen@willbe.so>",
   "contributors": [
     {
       "name": "Kostiantyn Wandalen",
-      "email": "wtory.net@domainsbyproxy.com>"
+      "email": "wanalen@willbe.so>"
     },
     {
       "name": "Volodymyr M.",

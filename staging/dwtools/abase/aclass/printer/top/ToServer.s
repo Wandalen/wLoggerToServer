@@ -39,7 +39,7 @@ var symbolForLevel = Symbol.for( 'level' );
 //
 
 var _ = wTools;
-var Parent = wPrinterTop;
+var Parent = _.PrinterTop;
 var Self = function wLoggerToServer( o )
 {
   if( !( this instanceof Self ) )
@@ -106,20 +106,49 @@ function disconnect()
 
 //
 
-function write()
+// function write()
+// {
+//   var self = this;
+
+//   var o = wPrinterBase.prototype.write.apply( self,arguments );
+
+//   if( !o )
+//   return;
+
+//   _.assert( o );
+//   _.assert( _.arrayIs( o.output ) );
+//   _.assert( o.output.length === 1 );
+
+//   var message = o.output[ 0 ];
+
+//   if( self.socket.connected )
+//   {
+//     self.counter.out++;
+//     self.socket.emit( self.typeOfMessage, message, () => self.counter.in++ );
+//   }
+
+//   return o;
+// }
+
+//
+
+function _transformEnd( o )
 {
   var self = this;
 
-  var o = wPrinterBase.prototype.write.apply( self,arguments );
+  _.assert( arguments.length === 1, 'expects single argument' );
+
+  // debugger
+
+  o = Parent.prototype._transformEnd.call( self, o );
 
   if( !o )
   return;
 
-  _.assert( o );
-  _.assert( _.arrayIs( o.output ) );
-  _.assert( o.output.length === 1 );
+  _.assert( _.arrayIs( o.outputForTerminal ) );
+  _.assert( o.outputForTerminal.length === 1 );
 
-  var message = o.output[ 0 ];
+  var message = o.outputForTerminal[ 0 ];
 
   if( self.socket.connected )
   {
@@ -168,11 +197,12 @@ var Proto =
   connect : connect,
   disconnect : disconnect,
 
-  write : write,
+  // write : write,
+  _transformEnd : _transformEnd,
 
   // relationships
 
-  constructor : Self,
+  // constructor : Self,
   Composes : Composes,
   Aggregates : Aggregates,
   Associates : Associates,
@@ -182,7 +212,7 @@ var Proto =
 
 //
 
-_.classMake
+_.classDeclare
 ({
   cls : Self,
   parent : Parent,

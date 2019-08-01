@@ -1,9 +1,10 @@
 
+
 about :
 
-  name : "wLoggerToServer"
-  description : "The module in JavaScript provides convenient, layered, logging to the server."
-  version : "0.3.11"
+  name : "wGdfStrategy"
+  description : "Collection of strategies to convert complex data structures from one GDF ( generic data format ) to another GDF. You may use the module to serialize complex data structure to string or deserialize string back to the original data structure. Generic data format ( GDF ) is a format of data structure designed with taking into account none unique feature of data so that it is applicable to any kind of data."
+  version : "0.3.36"
   enabled : 1
   interpreters :
   - nodejs >= 6.0.0
@@ -15,23 +16,24 @@ about :
 execution :
 
   scripts :
-    test : wtest staging
-    docgen : wdocgen staging
+    test : wtest .run proto/**
+    docgen : wdocgen proto
 
 path :
 
-  repository : git+https://github.com/Wandalen/wLoggerToServer.git
-  bugs : https://github.com/Wandalen/wLoggerToServer/issues
+  repository : git+https://github.com/Wandalen/wGdfStrategy.git
+  bugs : https://github.com/Wandalen/wGdfStrategy/issues
 
 step :
 
   export.proto :
-    inherit : export
+    inherit : module.export
     export : path::proto
     tar : 0
     criterion :
       debug : 1
       proto : 1
+
 
 build :
 
@@ -43,7 +45,9 @@ build :
       proto : 1
       export : 1
       tar : 1
+      public : 1
     steps :
       - build::debug.raw
       - step::export.proto
+
 

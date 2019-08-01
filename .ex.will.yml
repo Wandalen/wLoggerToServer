@@ -2,9 +2,9 @@
 
 about :
 
-  name : "wGdfStrategy"
-  description : "Collection of strategies to convert complex data structures from one GDF ( generic data format ) to another GDF. You may use the module to serialize complex data structure to string or deserialize string back to the original data structure. Generic data format ( GDF ) is a format of data structure designed with taking into account none unique feature of data so that it is applicable to any kind of data."
-  version : "0.3.36"
+  name : "wloggertoserver"
+  description : "The module in JavaScript provides convenient, layered, logging to the server."
+  version : "0.3.12"
   enabled : 1
   interpreters :
   - nodejs >= 6.0.0
@@ -18,11 +18,6 @@ execution :
   scripts :
     test : wtest .run proto/**
     docgen : wdocgen proto
-
-path :
-
-  repository : git+https://github.com/Wandalen/wGdfStrategy.git
-  bugs : https://github.com/Wandalen/wGdfStrategy/issues
 
 step :
 
@@ -49,5 +44,3 @@ build :
     steps :
       - build::debug.raw
       - step::export.proto
-
-

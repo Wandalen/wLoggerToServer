@@ -1,6 +1,6 @@
 {
   "name": "wloggertoserver",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "enabled": 0,
   "engine": "node >= 6.0.0",
   "description": "The module in JavaScript provides convenient, layered, logging to the server.",

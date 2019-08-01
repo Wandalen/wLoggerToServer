@@ -1,3 +1,4 @@
+
 .*
 -*
 *.log
@@ -5,10 +6,11 @@
 *.sh
 *.bat
 *.tmp
-*.todo
-tmp
+*.special
+*.out
+build
 builder
-proto
+html.build.coffee
 node_modules
 package-lock.json
-html.build.coffee
+proto/dwtools/atop/will.test/_asset/_repo

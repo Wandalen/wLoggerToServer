@@ -21,24 +21,23 @@ var Self = {};
 
 function log( test )
 {
-  var msgs = [];
-
   var http = require('http');
   var server = http.createServer( () => {} );
   var io = require( 'socket.io' )( server );
+  
+  let messageCon = new wConsequence();
 
   io.sockets.on( 'connection', function ( socket )
   {
     socket.on( 'join', function ( msg, reply )
-    {
+    { 
       logger.log( 'wLoggerToServer connected' );
-      reply();
+      reply( 0 );
     });
 
-    socket.on ( 'log', function ( msg, reply )
-    {
-      msgs.push( msg );
-      reply();
+    socket.on( 'log', function ( msg )
+    { 
+      messageCon.take( msg )
     });
   });
 
@@ -47,19 +46,31 @@ function log( test )
 
   server.listen( 8080, () => console.log( 'server started' ) );
 
-  return loggerToServer.connect()
-  .doThen( () =>
-  {
+  let ready = loggerToServer.connect();
+  
+  ready
+  .then( () =>
+  { 
     loggerToServer.log( msg );
+    return messageCon.orKeepingSplit( _.timeOutError( 3000 ) )
   })
-  .doThen( () => loggerToServer.disconnect() )
-  .doThen( () =>
-  {
+  .then( ( got ) => 
+  { 
+    test.identical( got, msg );
+    return null;
+  })
+  .finally( () =>
+  { 
+    return loggerToServer.disconnect()
+  })
+  .finally( () =>
+  { 
     var con = new wConsequence();
-    io.close( () => server.close( () => con.give() ) )
+    io.close( () => server.close( () => con.take( null ) ) )
     return con;
   })
-  .doThen( () => test.identical( msgs, [ msg ] ) );
+  
+  return ready;
 }
 
 //
@@ -82,6 +93,6 @@ _.mapExtend( Self,Proto );
 Self = wTestSuite( Self );
 
 if( typeof module !== 'undefined' && !module.parent )
-_.Tester.test( Self.name );
+wTester.test( Self.name );
 
 } )( );

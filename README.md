@@ -1,8 +1,6 @@
 # wLoggerToServer [![Build Status](https://travis-ci.org/Wandalen/wLoggerToServer.svg?branch=master)](https://travis-ci.org/Wandalen/wLoggerToServer)
 
-The module in JavaScript provides way to send messages to the dedicated server.
-Logger connects to the server and transfers all incoming/outcoming messages to it using socket.io.
-
+Class to redirect output from remote source to console.
 
 ## Installation
 ```terminal

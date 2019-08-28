@@ -27,7 +27,7 @@ l.connect()
 .doThen( function ()
 {
   /* logger is connected, now send a message */
-  l.log( 'Message from wLoggerToServer' );
+  l.log( 'Message to server' );
   l.disconnect();
 })
 ```

@@ -14,7 +14,7 @@ npm install wloggertoserver
  * connect - connect to server;
  * disconnect - disconnect from current server.
 
-[More information about common wLogger features.]( https://github.com/Wandalen/wLogger )
+More information about common wLogger you may find [here]( https://github.com/Wandalen/wLogger ).
 
 ##### Example
 ```javascript

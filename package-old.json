@@ -2,7 +2,7 @@
   "name": "wloggertoserver",
   "version": "0.3.11",
   "enabled": 0,
-  "engine": "node >= 6.0.0",
+  "engine": "node >= 8.0.0",
   "description": "The module in JavaScript provides convenient, layered, logging to the server.",
   "author": "Kostiantyn Wandalen <wanalen@willbe.so>",
   "contributors": [
@@ -19,7 +19,7 @@
   "main": "proto/dwtools/abase/aclass/printer/top/ToServer.s",
   "files": [
     "proto/dwtools/abase/aclass/printer",
-    "proto/dwtools/Tools.s", "production"
+    "proto/dwtools/Tools.s", "out"
   ],
   "scripts": {
     "test": "wtest staging",

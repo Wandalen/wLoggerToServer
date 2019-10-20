@@ -66,18 +66,18 @@ function connect( url )
 
   _.assert( _.strIs( self.url ) );
 
-  var con = new wConsequence;
+  var con = new _.Consequence();
 
   if( self.socket && self.socket.connected )
   self.socket.disconnect();
 
   self.socket = _.io( self.url );
   self.socket.on( 'connect', function ()
-  {
-    self.socket.emit( 'join', '', () => con.give() );
+  { 
+    self.socket.emit( 'join', '', () => con.take( null ) );
   });
 
-  return con.eitherThenSplit( _.timeOutError( self.connectionTimeout ) );
+  return con.orKeepingSplit( _.timeOutError( self.connectionTimeout ) );
 }
 
 //
@@ -85,12 +85,7 @@ function connect( url )
 function disconnect()
 {
   var self = this;
-
-  var con = new wConsequence().give();
-
-  con.timeOutThen( self.delayBeforeDisconnect, () => self.socket.disconnect() )
-
-  return con;
+  return _.timeOut( self.delayBeforeDisconnect, () => self.socket.disconnect() );
 }
 
 //

@@ -11,9 +11,6 @@ node_js:
   - '10'
   - '12'
   - 'lts/*'
-compiler:
-  - gcc
-  - clang
 script:
   - npm test
 cache:

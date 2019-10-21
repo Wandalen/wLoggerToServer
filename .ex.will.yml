@@ -31,7 +31,7 @@ about :
 path :
 
   repository : git+https:///github.com/Wandalen/wLoggerToServer.git
-  remotes :
+  origins :
    - git+https:///github.com/Wandalen/wLoggerToServer.git
    - npm:///wloggertoserver
   bugtracker : https:///github.com/Wandalen/wLoggerToServer/issues

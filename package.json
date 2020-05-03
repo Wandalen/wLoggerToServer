@@ -1,0 +1,49 @@
+{
+  "name" : "wloggertoserver",
+  "version" : "0.3.14",
+  "enabled" : 1,
+  "engine" : "node >= 8.0.0",
+  "description" : "The module in JavaScript provides convenient, layered, logging to the server.",
+  "author" : "Kostiantyn Wandalen <wanalen@willbe.so>",
+  "contributors" :
+  [
+    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@willbe.so" },
+    { "name" : "Volodymyr M.", "email" : "volodymyr.migdal@gmail.com" }
+  ],
+  "license" : "MIT",
+  "main" : "proto/dwtools/abase/aclass/printer/top/ToServer.s",
+  "files" : [ "proto/dwtools/abase/aclass/printer", "proto/dwtools/Tools.s", "out" ],
+  "scripts" : { "test" : "wtest staging", "docgen" : "wdocgen proto" },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/Wandalen/wLoggerToServer.git"
+  },
+  "bugs" :
+  {
+    "url" : "https://github.com/Wandalen/wLoggerToServer/issues"
+  },
+  "dependencies" :
+  {
+    "wTools" : "alpha",
+    "wCopyable" : "alpha",
+    "wConsequence" : "alpha",
+    "wColor" : "alpha",
+    "wFiles" : "alpha",
+    "socket.io" : "2.3.0",
+    "socket-io-server" : "1.0.5",
+    "express" : "4.17.1"
+  },
+  "devDependencies" : { "wloggertoserver" : ".", "wTesting" : "alpha" },
+  "keywords" :
+  [
+    "wTools",
+    "logger",
+    "logging",
+    "log",
+    "colorful log",
+    "multilevel log",
+    "colors",
+    "color"
+  ]
+}

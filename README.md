@@ -2,10 +2,13 @@
 
 Class to redirect output from remote source to console.
 
+
 ## Installation
+
 ```terminal
 npm install wloggertoserver
 ```
+
 ## Usage
 ### Options
 * url { string }[ optional, default : localhost:3000 ] - address of the server.
@@ -31,13 +34,3 @@ l.connect()
   l.disconnect();
 })
 ```
-
-
-
-
-
-
-
-
-
-

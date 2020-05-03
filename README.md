@@ -3,6 +3,8 @@
 Class to redirect output from remote source to console.
 
 
+
+
 ## Installation
 
 ```terminal

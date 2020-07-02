@@ -1,6 +1,6 @@
 {
   "name" : "wloggertoserver",
-  "version" : "0.3.31",
+  "version" : "0.3.32",
   "enabled" : 1,
   "engine" : "node >= 10.0.0",
   "description" : "The module in JavaScript provides convenient, layered, logging to the server.",
@@ -12,7 +12,7 @@
   ],
   "license" : "MIT",
   "main" : "proto/dwtools/amid/l1_logger/ToServer.s",
-  "files" : [ "proto/dwtools/abase/aclass/printer", "proto/dwtools/Tools.s", "out" ],
+  "files" : [ "proto/dwtools/amid/l1_logger", "proto/dwtools/Tools.s", "out" ],
   "scripts" : { "test" : "wtest staging", "docgen" : "wdocgen proto" },
   "repository" :
   {

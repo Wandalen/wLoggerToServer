@@ -94,7 +94,7 @@ function disconnect()
 // {
 //   var self = this;
 
-//   var o = wPrinterBase.prototype.write.apply( self,arguments );
+//   var o = wPrinterBasic.prototype.write.apply( self,arguments );
 
 //   if( !o )
 //   return;

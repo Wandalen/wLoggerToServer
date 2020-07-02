@@ -75,7 +75,7 @@ path :
       content : prime
 
   entry.proto.no.tests :
-    path : proto/dwtools/abase/aclass/printer/top/ToServer.s
+    path : proto/dwtools/amid/l1_logger/ToServer.s
     criterion :
       tests : 'no.tests'
   entry.proto.only.tests :
@@ -87,7 +87,7 @@ path :
   # npm.files : proto
 
   entry.out.raw.debug :
-    path : '{path::out.*=1}/source/dwtools/abase/aclass/printer/top/ToServer.s'
+    path : '{path::out.*=1}/source/dwtools/amid/l1_logger/ToServer.s'
     criterion :
       debug : [ debug, release ]
       raw : raw

@@ -1,4 +1,4 @@
-# wLoggerToServer [![Build Status](https://travis-ci.org/Wandalen/wLoggerToServer.svg?branch=master)](https://travis-ci.org/Wandalen/wLoggerToServer)
+# module::LoggerToServer [![Status](https://github.com/Wandalen/wLoggerToServer/workflows/Test/badge.svg)](https://github.com/Wandalen/wLoggerToServer}/actions?query=workflow%3ATest)
 
 Class to redirect output from remote source to console.
 

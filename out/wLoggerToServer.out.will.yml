@@ -122,7 +122,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: ../proto/dwtools/amid/l1_logger/ToServer.s
+        path: ../proto/wtools/amid/l1_logger/ToServer.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -132,13 +132,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/amid/l1_logger/ToServer.s'
+        path: '{path::out.*=1}/source/wtools/amid/l1_logger/ToServer.s'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/amid/l1_logger/ToServer.s'
+        path: '{path::out.*=1}/source/wtools/amid/l1_logger/ToServer.s'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug
@@ -165,15 +165,15 @@ module:
         path:
           - ../proto
           - ../proto/Integration.test.s
-          - ../proto/dwtools
-          - ../proto/dwtools/Tools.s
-          - ../proto/dwtools/abase
-          - ../proto/dwtools/amid
-          - ../proto/dwtools/amid/l1_logger
-          - ../proto/dwtools/amid/l1_logger/ToServer.s
-          - ../proto/dwtools/amid/l1_logger.test
-          - ../proto/dwtools/amid/l1_logger.test/ToServer.test.s
-          - ../proto/dwtools/atop
+          - ../proto/wtools
+          - ../proto/wtools/Tools.s
+          - ../proto/wtools/abase
+          - ../proto/wtools/amid
+          - ../proto/wtools/amid/l1_logger
+          - ../proto/wtools/amid/l1_logger/ToServer.s
+          - ../proto/wtools/amid/l1_logger.test
+          - ../proto/wtools/amid/l1_logger.test/ToServer.test.s
+          - ../proto/wtools/atop
     submodule:
       wTools:
         path: 'npm:///wTools'
@@ -945,7 +945,7 @@ module:
       entry.proto.no.tests:
         criterion:
           tests: no.tests
-        path: proto/dwtools/amid/l1_logger/ToServer.s
+        path: proto/wtools/amid/l1_logger/ToServer.s
       entry.proto.only.tests:
         criterion:
           tests: only.tests
@@ -955,13 +955,13 @@ module:
           debug: debug
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/amid/l1_logger/ToServer.s'
+        path: '{path::out.*=1}/source/wtools/amid/l1_logger/ToServer.s'
       entry.out.raw.debug.release:
         criterion:
           debug: release
           raw: raw
           content: prime
-        path: '{path::out.*=1}/source/dwtools/amid/l1_logger/ToServer.s'
+        path: '{path::out.*=1}/source/wtools/amid/l1_logger/ToServer.s'
       entry.out.compiled.debug.debug:
         criterion:
           debug: debug

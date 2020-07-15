@@ -31,12 +31,7 @@ var _ = wTools;
 var Parent = _.PrinterTop;
 var Self = function wLoggerToServer( o )
 {
-  if( !( this instanceof Self ) )
-  if( o instanceof Self )
-  return o;
-  else
-  return new( _.routineJoin( Self, Self, arguments ) );
-  return Self.prototype.init.apply( this,arguments );
+  return _.workpiece.construct( Self, this, arguments );
 }
 
 Self.nameShort = 'LoggerToSever';
@@ -73,7 +68,7 @@ function connect( url )
 
   self.socket = _.io( self.url );
   self.socket.on( 'connect', function ()
-  { 
+  {
     self.socket.emit( 'join', '', () => con.take( null ) );
   });
 

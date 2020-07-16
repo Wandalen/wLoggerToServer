@@ -6,7 +6,7 @@
 
 if( typeof module !== 'undefined' )
 {
-  var _ = require( '../../../../Tools.s' );
+  let _ = require( '../../../../Tools.s' );
 
   if( module.isBrowser )
   {
@@ -27,9 +27,9 @@ var symbolForLevel = Symbol.for( 'level' );
 
 //
 
-var _ = wTools;
-var Parent = _.PrinterTop;
-var Self = function wLoggerToServer( o )
+let _ = wTools;
+let Parent = _.PrinterTop;
+let Self = function wLoggerToServer( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }

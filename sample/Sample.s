@@ -2,7 +2,7 @@
 if( typeof module !== 'undefined' )
 require( 'wloggertoserver' );
 
-var _ = wTools;
+let _ = wTools;
 
 var express = require( 'express' );
 var app = express();

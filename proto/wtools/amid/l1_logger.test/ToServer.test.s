@@ -7,15 +7,15 @@ if( typeof module !== 'undefined' )
 
   require( '../printer/top/ToServer.s' );
 
-  var _ = wTools;
+  let _ = wTools;
 
   _.include( 'wTesting' );
 
 }
 
-var _ = wTools;
-var Parent = wTools.Testing;
-var Self = {};
+let _ = wTools;
+let Parent = wTools.Testing;
+let Self = {};
 
 //
 

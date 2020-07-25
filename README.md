@@ -1,4 +1,4 @@
-# module::LoggerToServer [![Status](https://github.com/Wandalen/wLoggerToServer/workflows/publish/badge.svg)](https://github.com/Wandalen/wLoggerToServer/actions?query=workflow%3Apublish) [![experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
+# module::LoggerToServer [![status](https://github.com/Wandalen/wLoggerToServer/workflows/publish/badge.svg)](https://github.com/Wandalen/wLoggerToServer/actions?query=workflow%3Apublish) [![experimental](https://img.shields.io/badge/stability-experimental-orange.svg)](https://github.com/emersion/stability-badges#experimental)
 
 Class to redirect output from remote source to console.
 

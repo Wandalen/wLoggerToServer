@@ -1,1 +1,49 @@
-{"name":"wloggertoserver","version":"0.3.45","enabled":1,"engine":"node >= 10.0.0","description":"The module in JavaScript provides convenient, layered, logging to the server.","author":"Kostiantyn Wandalen <wanalen@01.school>","contributors":[{"name":"Kostiantyn Wandalen","email":"wanalen@01.school"},{"name":"Volodymyr M.","email":"volodymyr.migdal@gmail.com"}],"license":"MIT","main":"proto/wtools/amid/l1_logger/ToServer.s","files":["proto/wtools/amid/l1_logger","proto/wtools/Tools.s","out"],"scripts":{"test":"wtest staging","docgen":"wdocgen proto"},"repository":{"type":"git","url":"https://github.com/Wandalen/wLoggerToServer.git"},"bugs":{"url":"https://github.com/Wandalen/wLoggerToServer/issues"},"dependencies":{"wTools":"","wCopyable":"","wConsequence":"","wColor":"","wFiles":"","socket.io":"","socket-io-server":"","express":""},"devDependencies":{"wTesting":"","wloggertoserver":"."},"keywords":["wTools","logger","logging","log","colorful log","multilevel log","colors","color"]}
+{
+  "name" : "wloggertoserver",
+  "version" : "0.3.46",
+  "enabled" : 1,
+  "engine" : "node >= 10.0.0",
+  "description" : "The module in JavaScript provides convenient, layered, logging to the server.",
+  "author" : "Kostiantyn Wandalen <wanalen@01.school>",
+  "contributors" :
+  [
+    { "name" : "Kostiantyn Wandalen", "email" : "wanalen@01.school" },
+    { "name" : "Volodymyr M.", "email" : "volodymyr.migdal@gmail.com" }
+  ],
+  "license" : "MIT",
+  "main" : "proto/wtools/amid/l1_logger/ToServer.s",
+  "files" : [ "proto/wtools/amid/l1_logger", "proto/wtools/Tools.s", "out" ],
+  "scripts" : { "test" : "wtest staging", "docgen" : "wdocgen proto" },
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/Wandalen/wLoggerToServer.git"
+  },
+  "bugs" :
+  {
+    "url" : "https://github.com/Wandalen/wLoggerToServer/issues"
+  },
+  "dependencies" :
+  {
+    "wTools" : "",
+    "wCopyable" : "",
+    "wConsequence" : "",
+    "wColor" : "",
+    "wFiles" : "",
+    "socket.io" : "",
+    "socket-io-server" : "",
+    "express" : ""
+  },
+  "devDependencies" : { "wTesting" : "", "wloggertoserver" : "." },
+  "keywords" :
+  [
+    "wTools",
+    "logger",
+    "logging",
+    "log",
+    "colorful log",
+    "multilevel log",
+    "colors",
+    "color"
+  ]
+}

@@ -80,7 +80,7 @@ function connect( url )
 function disconnect()
 {
   var self = this;
-  return _.timeOut( self.delayBeforeDisconnect, () => self.socket.disconnect() );
+  return _.time.out( self.delayBeforeDisconnect, () => self.socket.disconnect() );
 }
 
 //

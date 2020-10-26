@@ -72,7 +72,8 @@ function connect( url )
     self.socket.emit( 'join', '', () => con.take( null ) );
   });
 
-  return con.orKeepingSplit( _.timeOutError( self.connectionTimeout ) );
+  return _.Consequence.Or( con, _.time.outError( self.connectionTimeout ) );
+  // return con.orKeepingSplit( _.timeOutError( self.connectionTimeout ) );
 }
 
 //

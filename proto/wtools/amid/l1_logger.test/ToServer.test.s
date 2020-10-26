@@ -24,19 +24,19 @@ function log( test )
   var http = require('http');
   var server = http.createServer( () => {} );
   var io = require( 'socket.io' )( server );
-  
+
   let messageCon = new wConsequence();
 
   io.sockets.on( 'connection', function ( socket )
   {
     socket.on( 'join', function ( msg, reply )
-    { 
+    {
       logger.log( 'wLoggerToServer connected' );
       reply( 0 );
     });
 
     socket.on( 'log', function ( msg )
-    { 
+    {
       messageCon.take( msg )
     });
   });
@@ -47,29 +47,30 @@ function log( test )
   server.listen( 8080, () => console.log( 'server started' ) );
 
   let ready = loggerToServer.connect();
-  
+
   ready
   .then( () =>
-  { 
+  {
     loggerToServer.log( msg );
-    return messageCon.orKeepingSplit( _.timeOutError( 3000 ) )
+    return _.Consequence.Or( messageCon, _.timeOutError( 3000 ) );
+    // return messageCon.orKeepingSplit( _.timeOutError( 3000 ) );
   })
-  .then( ( got ) => 
-  { 
+  .then( ( got ) =>
+  {
     test.identical( got, msg );
     return null;
   })
   .finally( () =>
-  { 
+  {
     return loggerToServer.disconnect()
   })
   .finally( () =>
-  { 
+  {
     var con = new wConsequence();
     io.close( () => server.close( () => con.take( null ) ) )
     return con;
   })
-  
+
   return ready;
 }
 

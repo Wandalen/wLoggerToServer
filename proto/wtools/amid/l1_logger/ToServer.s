@@ -125,10 +125,10 @@ function _transformEnd( o )
   if( !o )
   return;
 
-  _.assert( _.arrayIs( o.outputForPrinter ) );
-  _.assert( o.outputForPrinter.length === 1 );
+  _.assert( _.arrayIs( o._outputForPrinter ) );
+  _.assert( o._outputForPrinter.length === 1 );
 
-  var message = o.outputForPrinter[ 0 ];
+  var message = o._outputForPrinter[ 0 ];
 
   if( self.socket.connected )
   {

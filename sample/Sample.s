@@ -18,7 +18,7 @@ io.on( 'connection', function( client )
 
     client.on ('log', function ( msg )
     {
-      logger.log( _.strColor.bg( _.strColor.fg( "Message from logger  : " + msg, 'black' ), 'yellow' ) );
+      logger.log( _.strColor.bg( _.strColor.fg( 'Message from logger  : ' + msg, 'black' ), 'yellow' ) );
     });
   });
 

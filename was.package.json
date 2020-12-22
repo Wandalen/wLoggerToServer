@@ -13,7 +13,7 @@
   "license" : "MIT",
   "main" : "proto/wtools/amid/l1_logger/ToServer.s",
   "files" : [ "proto/wtools/amid/l1_logger", "proto/wtools/Tools.s", "out" ],
-  "scripts" : { "test" : "wtest staging", "docgen" : "wdocgen proto" },
+  "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
   {
     "type" : "git",
@@ -34,7 +34,7 @@
     "socket-io-server" : "",
     "express" : ""
   },
-  "devDependencies" : { "wTesting" : "", "wloggertoserver" : "." },
+  "devDependencies" : { "wTesting" : "", "wloggertoserver" : ".", "eslint" : "7.1.0" },
   "keywords" :
   [
     "wTools",

@@ -1,11 +1,13 @@
-( function _ToServer_test_s_( ) {
+( function _ToServer_test_s_( )
+{
 
 'use strict';
 
 if( typeof module !== 'undefined' )
 {
 
-  require( '../printer/top/ToServer.s' );
+  // require( '../printer/top/ToServer.s' );
+  require( '../l1_logger/ToServer.s' );
 
   let _ = wTools;
 
@@ -21,7 +23,7 @@ let Self = {};
 
 function log( test )
 {
-  var http = require('http');
+  var http = require( 'http' );
   var server = http.createServer( () => {} );
   var io = require( 'socket.io' )( server );
 
@@ -84,13 +86,13 @@ var Proto =
 
   tests :
   {
-    log : log
+    log
   },
 }
 
 //
 
-_.mapExtend( Self,Proto );
+_.mapExtend( Self, Proto );
 Self = wTestSuite( Self );
 
 if( typeof module !== 'undefined' && !module.parent )

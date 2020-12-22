@@ -1,4 +1,5 @@
-(function _PrinterToSever_s_() {
+(function _PrinterToSever_s_()
+{
 
 'use strict';
 
@@ -6,7 +7,8 @@
 
 if( typeof module !== 'undefined' )
 {
-  let _ = require( '../../../../Tools.s' );
+  // let _ = require( '../../../../Tools.s' );
+  let _ = require( '../../Tools.s' );
 
   if( module.isBrowser )
   {
@@ -28,8 +30,10 @@ var symbolForLevel = Symbol.for( 'level' );
 //
 
 let _ = wTools;
-let Parent = _.PrinterTop;
-let Self = function wLoggerToServer( o )
+// let Parent = _.PrinterTop;
+let Parent = _.Logger;
+let Self = wLoggerToServer;
+function wLoggerToServer( o )
 {
   return _.workpiece.construct( Self, this, arguments );
 }
@@ -42,9 +46,9 @@ function init( o )
 {
   var self = this;
 
-  Parent.prototype.init.call( self,o );
+  Parent.prototype.init.call( self, o );
 
-  if( !self.url  )
+  if( !self.url )
   self.url = 'http://127.0.0.1:3000';
 
   self.counter = { out : 0, in : 0 };
@@ -172,21 +176,21 @@ var Restricts =
 var Proto =
 {
 
-  init : init,
+  init,
 
-  connect : connect,
-  disconnect : disconnect,
+  connect,
+  disconnect,
 
   // write : write,
-  _transformEnd : _transformEnd,
+  _transformEnd,
 
   // relationships
 
   // constructor : Self,
-  Composes : Composes,
-  Aggregates : Aggregates,
-  Associates : Associates,
-  Restricts : Restricts,
+  Composes,
+  Aggregates,
+  Associates,
+  Restricts,
 
 }
 

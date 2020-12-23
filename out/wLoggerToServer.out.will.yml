@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wLoggerToServer.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wLoggerToServer.out.will.yml: &ref_0
+    hash: d600666e69c43e4357a6a5958a202e0b
+    size: 39775
+  ../.ex.will.yml: &ref_1
     hash: 84a96cedfaf8d74245e26d68d0cbd23a
     size: 1901
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: 1c62b6127295d7dc34f20fc53aafd878
     size: 5553
 module:
@@ -18,11 +21,11 @@ module:
         server.
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - wTools
         - logger
         - logging
@@ -33,11 +36,11 @@ module:
         - color
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@01.school>
         - Volodymyr M. <volodymyr.migdal@gmail.com>
       npm.name: wloggertoserver
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -729,6 +732,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          filePath: 'reflector::exported.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          filePath: 'reflector::exported.files.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -817,8 +838,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wLoggerToServer.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wLoggerToServer
@@ -828,13 +850,28 @@ module:
         server.
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 10.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - wTools
+        - logger
+        - logging
+        - log
+        - colorful log
+        - multilevel log
+        - colors
+        - color
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@01.school>
+        - Volodymyr M. <volodymyr.migdal@gmail.com>
       npm.name: wloggertoserver
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -1531,3 +1568,6 @@ module:
       ../.im.will.yml:
         hash: 1c62b6127295d7dc34f20fc53aafd878
         size: 5553
+      wLoggerToServer.out.will.yml:
+        hash: d600666e69c43e4357a6a5958a202e0b
+        size: 39775

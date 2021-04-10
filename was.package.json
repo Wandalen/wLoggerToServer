@@ -12,7 +12,7 @@
   ],
   "license" : "MIT",
   "main" : "proto/wtools/amid/l1_logger/ToServer.s",
-  "files" : [ "proto/wtools/amid/l1_logger", "proto/wtools/Tools.s", "out" ],
+  "files" : [ "proto/wtools/amid/l1_logger", "proto/node_modules/Tools", "out" ],
   "scripts" : { "test" : "wtest .run 'proto/**' rapidity:-3", "docgen" : "wdocgen proto" },
   "repository" :
   {

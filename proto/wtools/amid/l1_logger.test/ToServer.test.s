@@ -9,15 +9,15 @@ if( typeof module !== 'undefined' )
   // require( '../printer/top/ToServer.s' );
   require( '../l1_logger/ToServer.s' );
 
-  let _ = wTools;
+  const _ = _global_.wTools;
 
   _.include( 'wTesting' );
 
 }
 
-let _ = wTools;
-let Parent = wTools.Testing;
-let Self = {};
+const _ = _global_.wTools;
+const Parent = wTools.Testing;
+const Proto = {};
 
 //
 
@@ -78,7 +78,7 @@ function log( test )
 
 //
 
-var Proto =
+const Proto =
 {
 
   name : 'LoggerToServer',
@@ -93,7 +93,7 @@ var Proto =
 //
 
 _.mapExtend( Self, Proto );
-Self = wTestSuite( Self );
+const Self = wTestSuite( Proto );
 
 if( typeof module !== 'undefined' && !module.parent )
 wTester.test( Self.name );

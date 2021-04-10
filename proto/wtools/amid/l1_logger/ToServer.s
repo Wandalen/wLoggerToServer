@@ -7,8 +7,8 @@
 
 if( typeof module !== 'undefined' )
 {
-  // let _ = require( '../../../../Tools.s' );
-  let _ = require( '../../Tools.s' );
+  // const _ = require( 'Tools' );
+  const _ = require( 'Tools' );
 
   if( module.isBrowser )
   {
@@ -29,10 +29,10 @@ var symbolForLevel = Symbol.for( 'level' );
 
 //
 
-let _ = wTools;
-// let Parent = _.PrinterTop;
-let Parent = _.Logger;
-let Self = wLoggerToServer;
+const _ = _global_.wTools;
+// const Parent = _.PrinterTop;
+const Parent = _.Logger;
+const Self = wLoggerToServer;
 function wLoggerToServer( o )
 {
   return _.workpiece.construct( Self, this, arguments );
@@ -173,7 +173,7 @@ var Restricts =
 // prototype
 // --
 
-var Proto =
+const Proto =
 {
 
   init,

@@ -32,7 +32,7 @@
     "wFiles" : "alpha",
     "socket.io" : "3.0.4",
     "socket-io-server" : "1.0.5",
-    "express" : "4.17.1"
+    "express" : "4.19.2"
   },
   "devDependencies" : { "wloggertoserver" : ".", "eslint" : "7.1.0", "wTesting" : "alpha" },
   "keywords" :
